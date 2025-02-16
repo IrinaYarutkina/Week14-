@@ -1,0 +1,20 @@
+const grades = Array.from({ length: 12 }, () => Math.floor(Math.random() * 100) + 1);
+const averageGrade = grades.reduce((sum, grade) => sum + grade, 0) / grades.length; 
+const maxGrade = Math.max(...grades);
+const minGrade = Math.min(...grades);
+const positiveGradesCount = grades.filter(grade => grade >= 60).length;
+const negativeGradesCount = grades.filter(grade => grade < 60).length;
+const letterGrades = grades.map(grade => {
+    if (grade >= 80) return 'A';
+    if (grade >= 60) return 'B';
+    if (grade >= 40) return 'C';
+    if (grade >= 20) return 'D';
+    return 'E';
+});
+console.log("Оценки студентов:", grades);
+console.log("Средний балл:", averageGrade.toFixed(2));
+console.log("Максимальный балл:", maxGrade);
+console.log("Минимальный балл:", minGrade);
+console.log("Количество положительных оценок:", positiveGradesCount);
+console.log("Количество отрицательных оценок:", negativeGradesCount);
+console.log("Буквенные оценки:", letterGrades);
